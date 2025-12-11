@@ -1,0 +1,23 @@
+# 我的第一个FastAPI程序
+
+## 学习时间
+2024年1月15日
+
+## 今天学了什么
+1. 安装了FastAPI：`pip install fastapi`
+2. 安装了uvicorn：`pip install "uvicorn[standard]"`
+3. 写了第一个程序
+
+## 代码示例
+```python
+from fastapi import FastAPI
+
+app = FastAPI()
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int):
+    return {"item_id": item_id}
